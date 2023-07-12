@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.crm.news.dto.NewsDTO;
 import com.crm.news.parsing.NewsParsing;
 
+import jakarta.annotation.security.RolesAllowed;
+
 
 
 
@@ -18,6 +20,7 @@ import com.crm.news.parsing.NewsParsing;
 public class NewsController {
 
 	
+	@RolesAllowed("CMR_TASK_USER")
 	@GetMapping("/news")
 	public List<NewsDTO> getNews(){ 
 		
